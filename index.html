@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- data-bs-theme="dark": modo escuro nativo do Bootstrap 5.3 -->
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounterStrike2 - Metas</title>
+
+    <!-- Passo 1: Bootstrap instalado via NPM -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Passo 9: Bootstrap Icons (também via NPM) -->
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <!-- Passo 6: personalizações (sempre DEPOIS do Bootstrap) -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="py-5 mb-4 border-bottom">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-primary">
+                <i class="bi bi-crosshair"></i> CS2 Metas
+            </h1>
+            <p class="lead mb-0">
+                Execuções, smokes e timings para cada mapa do Counter-Strike 2.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+
+        <!-- ================================================
+             PRIMEIRA LINHA: três colunas com largura automática (.col)
+             gy-3 = espaço vertical entre colunas quando elas empilham
+             ================================================ -->
+        <div class="row gy-3">
+
+            <!-- Coluna 1 — Passo 3: botão que abre o modal -->
+            <div class="col">
+                <h2 class="h4">Mapa da semana</h2>
+                <p>
+                    Mirage, lado TR. Execução rápida no bomb B
+                    usando três smokes e flashes de apoio.
+                </p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-play-circle-fill"></i> Ver execução B rápido
+                </button>
+            </div>
+
+            <!-- Coluna 2 — Passos 5, 6 e 7: card com imagem responsiva,
+                 cores personalizadas e utilidades de texto -->
+            <div class="col">
+                <div class="card custom-card">
+                    <img src="https://placehold.co/600x340/1b1f24/de9b35?text=Mirage"
+                         class="card-img-top img-fluid" alt="Mapa Mirage">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase text-primary fw-bold">Mirage</h5>
+                        <p class="card-text fs-6">
+                            Mapa equilibrado, com dois bombs bem separados
+                            e muitas opções de <span class="fst-italic">split</span> pelo meio.
+                        </p>
+                        <p class="card-text small text-decoration-underline mb-0">
+                            Ideal para treinar smokes de execução.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3 — Passo 8: cinco botões com Flexbox.
+                 Oculta em XS e SM (d-none d-md-block) -->
+            <div class="col d-none d-md-block">
+                <h2 class="h4">Escolha o mapa</h2>
+                <div class="d-flex justify-content-between flex-wrap gap-2">
+                    <button class="btn btn-primary">Mirage</button>
+                    <button class="btn btn-secondary btn-sm">Inferno</button>
+                    <button class="btn btn-outline-warning">Nuke</button>
+                    <button class="btn btn-outline-info btn-sm">Ancient</button>
+                    <button class="btn btn-outline-light btn-lg">Anubis</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================
+             SEGUNDA LINHA: coluna única (.col-12)
+             Passo 9: ícones do Bootstrap Icons como legenda
+             ================================================ -->
+        <div class="row">
+            <div class="col-12 text-bg-secondary rounded p-3">
+                <div class="d-flex flex-wrap justify-content-around gap-3 fs-5">
+                    <span><i class="bi bi-cloud-fog2-fill"></i> Smoke</span>
+                    <span><i class="bi bi-lightning-charge-fill"></i> Flash</span>
+                    <span><i class="bi bi-fire"></i> Molotov</span>
+                    <span><i class="bi bi-stopwatch"></i> Timing</span>
+                    <span><i class="bi bi-geo-alt-fill"></i> Posição</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================
+             TERCEIRA LINHA: tamanhos fixos (.col-md-4),
+             offset (.offset-md-2) e order (.order-md-*)
+             No HTML a ordem é: Economia, Pós-plant, Comunicação.
+             Em telas md+ o order reorganiza para:
+             Economia, Comunicação, Pós-plant.
+             ================================================ -->
+        <div class="row gy-3">
+            <!-- Coluna com offset: deslocada 2 colunas para a direita -->
+            <div class="col-md-4 offset-md-2">
+                <div class="border border-primary rounded p-3 h-100">
+                    <h3 class="h5"><i class="bi bi-cash-coin"></i> Economia</h3>
+                    <p class="mb-2">Só faça a execução completa com todos comprando utilitários.</p>
+                    <code>col-md-4 offset-md-2</code>
+                </div>
+            </div>
+            <!-- Coluna com ordem 3: vai para o final em md+ -->
+            <div class="col-md-4 order-md-3">
+                <div class="border border-secondary rounded p-3 h-100">
+                    <h3 class="h5"><i class="bi bi-shield-fill"></i> Pós-plant</h3>
+                    <p class="mb-2">Espalhe o time cobrindo os ângulos de retake do CT.</p>
+                    <code>col-md-4 order-md-3</code>
+                </div>
+            </div>
+            <!-- Coluna com ordem 1: sobe em md+ -->
+            <div class="col-md-4 order-md-1">
+                <div class="border border-info rounded p-3 h-100">
+                    <h3 class="h5"><i class="bi bi-people-fill"></i> Comunicação</h3>
+                    <p class="mb-2">Uma pessoa faz a call e conta o tempo das smokes.</p>
+                    <code>col-md-4 order-md-1</code>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================================================
+         Passo 4: modal acionado pelo botão da coluna 1
+         ================================================ -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="bi bi-map-fill text-primary"></i> Mirage — Execução B rápido
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Time saindo do Apartamentos (Apps) direto para o bomb B.</p>
+                    <!-- Conteúdo de exemplo: ajuste com as lineups e tempos que você usa -->
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-cloud-fog2-fill text-primary"></i> <strong>0s</strong> — smokes em Market Window, Market Door e Short</li>
+                        <li class="mb-2"><i class="bi bi-lightning-charge-fill text-warning"></i> <strong>+3s</strong> — flashes por cima de Apps</li>
+                        <li class="mb-2"><i class="bi bi-fire text-danger"></i> <strong>+4s</strong> — molotov no Bench</li>
+                        <li><i class="bi bi-bullseye text-info"></i> <strong>+5s</strong> — entrada no bomb e plant</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (bundle inclui o Popper) — necessário para o modal -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

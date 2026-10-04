@@ -1,0 +1,44 @@
+/* ==========================================================
+   styles.css — personalizações do tema "CS2 Metas"
+   Carregado DEPOIS do bootstrap.min.css: com a mesma
+   especificidade, vence a regra que vem por último.
+   ========================================================== */
+
+/* Passo 6 — Sobrescrevendo as variáveis globais do Bootstrap.
+   Cores clássicas do Counter-Strike:
+   primária = laranja do lado TR, secundária = azul do lado CT. */
+:root,
+[data-bs-theme="dark"] {
+  --bs-primary: #de9b35;
+  --bs-primary-rgb: 222, 155, 53;
+  --bs-secondary: #5d79ae;
+  --bs-secondary-rgb: 93, 121, 174;
+}
+
+/* Card com fundo na cor secundária (azul CT) */
+.custom-card {
+  background-color: var(--bs-secondary);
+  color: white; /* texto claro para contraste */
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* "Corrigindo o botão": o .btn-primary não lê --bs-primary,
+   ele tem variáveis próprias (--bs-btn-*). Por isso é preciso
+   informar cada estado manualmente (normal, hover, active). */
+.btn-primary {
+  --bs-btn-color: #1b1f24; /* texto escuro: mais legível sobre o laranja */
+  --bs-btn-bg: #de9b35;
+  --bs-btn-border-color: #de9b35;
+  --bs-btn-hover-color: #1b1f24;
+  --bs-btn-hover-bg: #c98a2c;
+  --bs-btn-hover-border-color: #bd8229;
+  --bs-btn-active-color: #1b1f24;
+  --bs-btn-active-bg: #b87d27;
+  --bs-btn-active-border-color: #ab7424;
+}
+
+/* Espaço entre as linhas do grid */
+.row + .row {
+  margin-top: 1.5rem;
+}
