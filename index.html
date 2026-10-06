@@ -94,8 +94,9 @@
       </div>
 
       <div class="container mt-3">
-        <div class="row">
-          <div class="col">
+        <div class="row gy-3">
+          <!-- tamanho fixo + offset: 1 coluna vazia antes -->
+          <div class="col-md-3 offset-md-1">
             <div class="border border-primary rounded p-3 h-100">
               <h3 class="h5"><i class="bi bi-cash-coin"></i> Economia</h3>
               <p class="mb-2">
@@ -103,7 +104,8 @@
               </p>
             </div>
           </div>
-          <div class="col">
+          <!-- order-md-3: vai para o final em telas md+ -->
+          <div class="col-md-4 order-md-3">
             <div class="border border-secondary rounded p-3 h-100">
               <h3 class="h5"><i class="bi bi-shield-fill"></i> Pós-plant</h3>
               <p class="mb-2">
@@ -111,7 +113,8 @@
               </p>
             </div>
           </div>
-          <div class="col">
+          <!-- order-md-1: sobe para antes do Pós-plant em telas md+ -->
+          <div class="col-md-4 order-md-1">
             <div class="border border-info rounded p-3 h-100">
               <h3 class="h5"><i class="bi bi-people-fill"></i> Comunicação</h3>
               <p class="mb-2">
